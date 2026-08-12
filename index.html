@@ -1,1 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Srujan Anirudh | AI/ML & Software Developer</title>
+
+    <meta name="description"
+        content="Portfolio of Srujan Anirudh Gurjapalli - Computer Science Engineering student interested in AI, Machine Learning and software development.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* Navigation */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid #1f2937;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #9ca3af;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 12px;
+            border: 1px solid #374151;
+            border-radius: 20px;
+            color: #9ca3af;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: 1.05;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #60a5fa;
+        }
+
+        .hero p {
+            max-width: 680px;
+            color: #9ca3af;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 11px 20px;
+            border-radius: 7px;
+            border: 1px solid #374151;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            border-color: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-secondary {
+            color: #d1d5db;
+        }
+
+        .btn-secondary:hover {
+            background: #111827;
+        }
+
+        /* Sections */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            font-size: 30px;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            color: #6b7280;
+            margin-bottom: 35px;
+        }
+
+        .about-text {
+            max-width: 800px;
+            color: #9ca3af;
+            font-size: 16px;
+        }
+
+        /* Skills */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .skill-card h3 {
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        /* Projects */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: #374151;
+        }
+
+        .project-card h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .project-tech {
+            color: #60a5fa;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #9ca3af;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .project-link {
+            color: #60a5fa;
+            font-size: 14px;
+        }
+
+        /* Experience */
+
+        .experience-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+            padding: 25px;
+            max-width: 850px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .experience-header h3 {
+            color: #ffffff;
+        }
+
+        .experience-header span {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .experience-card ul {
+            padding-left: 20px;
+            color: #9ca3af;
+        }
+
+        .experience-card li {
+            margin-bottom: 7px;
+        }
+
+        /* Certifications */
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+        }
+
+        .cert {
+            padding: 18px;
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 9px;
+        }
+
+        .cert strong {
+            display: block;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .cert span {
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        /* Contact */
+
+        .contact-box {
+            border: 1px solid #1f2937;
+            background: #111827;
+            padding: 35px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact-box p {
+            color: #9ca3af;
+            margin-bottom: 22px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: #60a5fa;
+            font-size: 14px;
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid #1f2937;
+            padding: 25px 0;
+            text-align: center;
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+        <div class="container nav-container">
+
+            <div class="logo">
+                Srujan Anirudh
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- Hero -->
+
+    <header class="hero">
+        <div class="container">
+
+            <div class="hero-content">
+
+                <div class="tag">
+                    Computer Science Engineering Student • 2027
+                </div>
+
+                <h1>
+                    Hi, I'm <span>Srujan.</span>
+                </h1>
+
+                <p>
+                    I build practical software and data-driven applications
+                    using Python, Machine Learning, FastAPI, and modern
+                    development tools.
+                </p>
+
+                <div class="buttons">
+
+                    <a class="btn btn-primary"
+                       href="#projects">
+                        View Projects
+                    </a>
+
+                    <a class="btn btn-secondary"
+                       href="https://github.com/srujananirudh"
+                       target="_blank">
+                        GitHub
+                    </a>
+
+                    <a class="btn btn-secondary"
+                       href="https://www.linkedin.com/in/srujan-anirudh-gurjapalli-376600360/"
+                       target="_blank">
+                        LinkedIn
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- About -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                About Me
+            </h2>
+
+            <p class="section-subtitle">
+                A little about what I do.
+            </p>
+
+            <p class="about-text">
+                I'm a Computer Science Engineering student at Vignan Institute
+                of Technology and Science, Hyderabad, graduating in 2027.
+                I enjoy building practical applications and working with
+                data, machine learning, and backend development.
+                <br><br>
+                I have experience working with Python, Pandas, NumPy,
+                Scikit-learn, FastAPI, PostgreSQL, and data visualization.
+                I also completed a Data Analyst internship at Bluestocks,
+                where I worked with financial datasets and exploratory data
+                analysis.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Skills
+            </h2>
+
+            <p class="section-subtitle">
+                Technologies and tools I work with.
+            </p>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <h3>Programming</h3>
+                    <p>Python, Java, SQL, HTML, CSS, JavaScript</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Machine Learning</h3>
+                    <p>
+                        Scikit-learn, Predictive Modeling,
+                        Data Preprocessing, EDA
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Development</h3>
+                    <p>FastAPI, React, REST APIs</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Data & Databases</h3>
+                    <p>
+                        Pandas, NumPy, Matplotlib, PostgreSQL,
+                        Supabase, Power BI, Tableau
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Tools</h3>
+                    <p>
+                        Git, GitHub, VS Code, Jupyter Notebook
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+
+    <section id="projects">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Projects
+            </h2>
+
+            <p class="section-subtitle">
+                Some of the things I've built.
+            </p>
+
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+
+                <div class="project-card">
+
+                    <h3>
+                        Village Explorer
+                    </h3>
+
+                    <div class="project-tech">
+                        FastAPI • PostgreSQL • HTML • CSS • JavaScript
+                    </div>
+
+                    <p>
+                        A full-stack location intelligence platform for
+                        exploring hierarchical geographical data across India,
+                        from states to villages.
+                    </p>
+
+                    <p>
+                        Built REST APIs with FastAPI, integrated PostgreSQL,
+                        and implemented hierarchical filtering, authentication,
+                        and API key-based access control.
+                    </p>
+
+                    <a class="project-link"
+                       href="https://github.com/srujananirudh/village-explorer-api"
+                       target="_blank">
+                        View on GitHub →
+                    </a>
+
+                </div>
+
+
+                <!-- Project 2 -->
+
+                <div class="project-card">
+
+                    <h3>
+                        Stock Analytics Dashboard
+                    </h3>
+
+                    <div class="project-tech">
+                        Python • Machine Learning • Pandas • NumPy • Power BI
+                    </div>
+
+                    <p>
+                        A stock analytics solution for exploring financial
+                        datasets and identifying useful trends and patterns.
+                    </p>
+
+                    <p>
+                        Performed data cleaning, preprocessing, and exploratory
+                        data analysis, then created a scoring model and
+                        interactive Power BI dashboards.
+                    </p>
+
+                    <a class="project-link"
+                       href="https://github.com/srujananirudh/Stock-Analytics-Dashboard"
+                       target="_blank">
+                        View on GitHub →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Experience -->
+
+    <section id="experience">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Experience
+            </h2>
+
+            <p class="section-subtitle">
+                My professional experience.
+            </p>
+
+            <div class="experience-card">
+
+                <div class="experience-header">
+
+                    <h3>
+                        Data Analyst Intern — Bluestocks
+                    </h3>
+
+                    <span>
+                        April 2026 – May 2026
+                    </span>
+
+                </div>
+
+                <ul>
+
+                    <li>
+                        Analyzed stock market datasets using Python,
+                        Pandas, and NumPy.
+                    </li>
+
+                    <li>
+                        Cleaned and preprocessed financial datasets
+                        for analysis and reporting.
+                    </li>
+
+                    <li>
+                        Performed exploratory data analysis to identify
+                        patterns, trends, and useful insights.
+                    </li>
+
+                    <li>
+                        Created visualizations and reports to communicate
+                        findings from financial datasets.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Certifications -->
+
+    <section id="certifications">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Certifications
+            </h2>
+
+            <p class="section-subtitle">
+                Certifications and courses I've completed.
+            </p>
+
+            <div class="certifications">
+
+                <div class="cert">
+                    <strong>
+                        ServiceNow Certified Application Developer (CAD)
+                    </strong>
+                    <span>2026</span>
+                </div>
+
+                <div class="cert">
+                    <strong>
+                        ServiceNow Certified System Administrator (CSA)
+                    </strong>
+                    <span>2026</span>
+                </div>
+
+                <div class="cert">
+                    <strong>
+                        Generative AI with AWS
+                    </strong>
+                    <span>Certification</span>
+                </div>
+
+                <div class="cert">
+                    <strong>
+                        Programming in Python
+                    </strong>
+                    <span>NPTEL</span>
+                </div>
+
+                <div class="cert">
+                    <strong>
+                        Getting Started with Tableau
+                    </strong>
+                    <span>Certification</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <h2 class="section-title">
+                    Let's Connect
+                </h2>
+
+                <p>
+                    I'm currently looking for opportunities to learn,
+                    build, and work on real-world software and AI projects.
+                </p>
+
+                <div class="contact-links">
+
+                    <a href="mailto:srujananirudh8@gmail.com">
+                        Email
+                    </a>
+
+                    <a href="https://github.com/srujananirudh"
+                       target="_blank">
+                        GitHub
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/srujan-anirudh-gurjapalli-376600360/"
+                       target="_blank">
+                        LinkedIn
+                    </a>
+
+                    <a href="tel:+919063087602">
+                        +91 9063087602
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="container">
+            © 2026 Srujan Anirudh Gurjapalli
+        </div>
+
+    </footer>
+
+</body>
+</html>
